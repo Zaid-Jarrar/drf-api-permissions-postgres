@@ -9,6 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 class SnackListView(ListCreateAPIView):
     queryset = Snack.objects.all()
     serializer_class = SnackSerializer
+    permission_classes = (IsAuthenticated,)
     
     
 class SnackDetailView(RetrieveUpdateDestroyAPIView):
